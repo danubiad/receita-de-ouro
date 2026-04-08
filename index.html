@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biscoito Caseiro - Receita de Ouro | Seu biscoito nunca mais vai ficar duro</title>
+<meta name="description" content="A receita de biscoito caseiro que acerta de primeira, mesmo que voce nunca tenha feito um antes. Crocante por fora, macio por dentro.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--azul:#083E6B;--azul2:#093672;--azulc:#004AAD;--oliva:#A0B43C;--oliva2:#8FA033;--branco:#FFF;--cinza:#333;--escuro:#1D1D1D;--bg:#F7F8FA;--dourado:#D4A017;--douradoc:#FFF8E7;--vermelho:#C0392B}
+body{font-family:'Inter',-apple-system,sans-serif;color:var(--cinza);line-height:1.6;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:var(--branco);box-shadow:0 2px 8px rgba(0,0,0,.06);position:sticky;top:0;z-index:100}
+.logo{font-size:1.1rem;font-weight:700;color:var(--azul)}
+.logo span{font-family:Georgia,serif;font-style:italic;font-weight:400;color:var(--oliva);display:block;font-size:.85rem}
+.navc{font-weight:600;color:var(--escuro);font-size:1rem}
+.navr{display:flex;align-items:center;gap:16px}
+.cd{display:flex;gap:5px}
+.cd .u{background:var(--escuro);color:var(--branco);padding:4px 10px;border-radius:6px;font-size:.75rem;font-weight:700;min-width:40px;text-align:center}
+.bn{background:var(--oliva);color:var(--branco);padding:12px 26px;border-radius:39px;text-decoration:none;font-weight:600;font-size:.82rem;letter-spacing:.5px;text-transform:uppercase;transition:background .3s}
+.bn:hover{background:var(--oliva2)}
+.hero{background:linear-gradient(135deg,#E8F0F8 0%,#D6E5F3 40%,#C8DCED 100%);min-height:680px;display:flex;align-items:center;padding:60px 5%;position:relative;overflow:hidden}
+.hc{max-width:620px;z-index:2;position:relative}
+.hero-tag{display:inline-block;background:var(--vermelho);color:var(--branco);padding:6px 18px;border-radius:20px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:18px}
+.hero h1{font-size:2.6rem;font-weight:900;color:var(--azul);line-height:1.1;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--vermelho);text-decoration:underline;text-decoration-color:var(--vermelho);text-underline-offset:4px}
+.hero .p1{font-size:1.18rem;color:var(--escuro);margin-bottom:10px;line-height:1.7;font-weight:500}
+.hero .p2{font-size:1rem;color:#555;margin-bottom:28px;line-height:1.7}
+.hero .p2 strong{color:var(--azul)}
+.hi{position:absolute;right:0;top:0;width:46%;height:100%;display:flex;align-items:center;justify-content:center;z-index:1}
+.hi .ph{width:380px;height:380px;border-radius:50%;background:linear-gradient(135deg,#FFD89B,#E8A849);display:flex;align-items:center;justify-content:center;font-size:5rem;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+.cta{display:inline-block;background:var(--oliva);color:var(--branco);padding:18px 48px;border-radius:39px;text-decoration:none;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:.8px;transition:all .3s;box-shadow:0 4px 20px rgba(160,180,60,.35)}
+.cta:hover{background:var(--oliva2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(160,180,60,.45)}
+.cta-sm{font-size:.82rem;padding:10px 20px}
+.cc{text-align:center;margin-top:35px}
+.trust{display:flex;gap:0;margin-top:24px;background:var(--branco);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.08);overflow:hidden;max-width:520px}
+.tb{flex:1;text-align:center;padding:14px 10px;border-right:1px solid #eee}
+.tb:last-child{border-right:none}
+.tb .ic{font-size:1.4rem;color:var(--azulc);margin-bottom:4px}
+.tb .lb{font-size:.72rem;font-weight:600;color:var(--azulc);line-height:1.3}
+.pt{display:inline-flex;align-items:ceor:var(--azulc);line-height:1.3}
+
+/* PRICE TAG */
+.pt{display:inline-flex;align-items:center;margin-top:16px;background:var(--azul);border-radius:10px;overflow:hidden}
+.pt .d{background:var(--oliva);color:var(--branco);padding:10px 16px;font-size:1.6rem;font-weight:800;line-height:1}
+.pt .d small{display:block;font-size:.65rem;font-weight:600}
+.pt .p{padding:8px 20px;color:var(--branco)}
+.pt .o{font-size:.8rem;text-decoration:line-through;opacity:.7}
+.pt .n{font-size:2rem;font-weight:800}
+.pt .n small{font-size:1rem;font-weight:600}
+
+/* ABERTURA EMOCIONAL */
+.story{padding:70px 5%;background:var(--branco)}
+.story-inner{max-width:740px;margin:0 auto}
+.story-inner p{font-size:1.08rem;line-height:1.85;color:#444;margin-bottom:18px}
+.story-inner p.lead{font-size:1.2rem;color:var(--escuro);font-weight:500}
+.story-inner strong{color:var(--azul)}
+.story-inner em.pain{color:var(--vermelho);font-style:normal;font-weight:700}
+.story-inner .virada{background:linear-gradient(135deg,var(--azul),var(--azul2));color:var(--branco);padding:30px 36px;border-radius:14px;margin:30px 0;font-size:1.05rem;line-height:1.8}
+.story-inner .virada strong{color:var(--oliva)}
+
+/* SECTIONS */
+section{padding:70px 5%}
+.sd{background:var(--azul);color:var(--branco)}
+.sl{background:var(--branco)}
+.sa{background:var(--bg)}
+.st{font-size:1.9rem;font-weight:800;color:var(--azul);text-align:center;margin-bottom:14px;line-height:1.25}
+.sd .st{color:var(--branco)}
+.ss{text-align:center;font-size:1rem;color:#666;max-width:700px;margin:0 auto 42px;line-height:1.7}
+.sd .ss{color:rgba(255,255,255,.8)}
+
+/* PROMESSA GRID */
+.prom-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:960px;margin:0 auto 38px}
+.prom-card{background:var(--branco);border-radius:14px;padding:26px;box-shadow:0 4px 18px rgba(0,0,0,.06);text-align:center;transition:transform .2s}
+.prom-card:hover{transform:translateY(-3px)}
+.prom-card .em{font-size:2.2rem;margin-bottom:10px}
+.prom-card h3{font-size:1rem;font-weight:700;color:var(--azul);margin-bottom:8px}
+.prom-card p{font-size:.88rem;color:#666;line-height:1.6}
+
+/* FEAT GRID */
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;max-width:980px;margin:0 auto 40px}
+.fc{background:var(--branco);border-radius:14px;padding:26px;box-shadow:0 4px 18px rgba(0,0,0,.06);display:flex;gap:14px;align-items:flex-start;transition:transform .2s}
+.fc:hover{transform:translateY(-3px)}
+.fc .fi{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--azulc),var(--azul));display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--branco);flex-shrink:0}
+.fc h3{font-size:.96rem;font-weight:700;color:var(--azul);margin-bottom:5px}
+.fc p{font-size:.86rem;color:#666;line-height:1.6}
+
+/* METODO */
+.ml{list-style:none;margin:28px auto;max-width:720px}
+.ml li{padding:13px 0 13px 34px;position:relative;font-size:1rem;color:rgba(255,255,255,.9);border-bottom:1px solid rgba(255,255,255,.1)}
+.ml li::before{content:'\2713';position:absolute;left:0;color:var(--oliva);font-weight:700;font-size:1.2rem}
+
+/* DOR EMOCIONAL */
+.dor-section{background:linear-gradient(180deg,#FFF5F5 0%,var(--branco) 100%)}
+.dor-grid{max-width:700px;margin:0 auto 30px;list-style:none}
+.dor-grid li{padding:14px 0 14px 34px;position:relative;font-size:1.02rem;color:var(--escuro);border-bottom:1px solid #f0e0e0}
+.dor-grid li::before{content:'\2717';position:absolute;left:0;color:var(--vermelho);font-weight:700;font-size:1.1rem}
+.dor-grid li em{font-style:normal;color:var(--vermelho);font-weight:600}
+
+/* DEPOIMENTOS */
+.dg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:960px;margin:0 auto 38px}
+.dc{background:var(--branco);border-radius:14px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.dc .stars{color:#F5A623;font-size:1.1rem;margin-bottom:8px}
+.dc p{font-size:.88rem;color:#555;line-height:1.7;font-style:italic;margin-bottom:10px}
+.dc .nm{font-weight:700;color:var(--azul);font-size:.83rem;font-style:normal}
+
+/* BONUS */
+.bg2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;max-width:1000px;margin:0 auto 38px}
+.bc{background:var(--branco);border-radius:14px;padding:26px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.06);border-top:4px solid var(--oliva);transition:transform .2s}
+.bc:hover{transform:translateY(-4px)}
+.bc .bnn{display:inline-block;background:var(--azul);color:var(--branco);padding:4px 14px;border-radius:20px;font-size:.72rem;font-weight:700;margin-bottom:12px}
+.bc h3{font-size:1rem;font-weight:700;color:var(--azul);margin-bottom:8px}
+.bc p{font-size:.84rem;color:#666;line-height:1.6}
+
+/* GARANTIA */
+.gb{max-width:720px;margin:0 auto;background:var(--branco);border-radius:18px;padding:42px;box-shadow:0 8px 40px rgba(0,0,0,.08);text-align:center;border:2px solid var(--oliva)}
+.gb .big{font-size:3.2rem;margin-bottom:14px}
+.gb h2{color:var(--azul);font-size:1.4rem;margin-bottom:6px}
+.gb .sg{color:var(--oliva);font-weight:700;font-size:1.08rem;margin-bottom:14px}
+.gb p{color:#555;line-height:1.7;font-size:.93rem}
+
+/* PRICING */
+.ps{text-align:center;background:linear-gradient(180deg,var(--bg) 0%,var(--branco) 100%)}
+.pc{max-width:600px;margin:0 auto 28px;background:var(--branco);border-radius:18px;padding:38px;box-shadow:0 8px 40px rgba(0,0,0,.1);border:2px solid var(--oliva)}
+.pc .urg{background:#FFF3CD;color:#856404;padding:10px 18px;border-radius:8px;font-weight:600;font-size:.88rem;margin-bottom:22px;display:inline-block}
+.pc .inc{text-align:left;list-style:none;margin:18px 0 28px}
+.pc .inc li{padding:7px 0 7px 26px;position:relative;font-size:.93rem;color:var(--escuro)}
+.pc .inc li::before{content:'\2713';position:absolute;left:0;color:var(--oliva);font-weight:700}
+.pg{margin:18px 0}
+.pg .de{font-size:1rem;color:#999;text-decoration:line-through}
+.pg .por{font-size:.88rem;color:var(--escuro);display:block;margin-top:3px}
+.pg .val{font-size:3rem;font-weight:900;color:var(--azul)}
+.pg .val small{font-size:1.4rem}
+.db{display:inline-block;background:var(--oliva);color:var(--branco);padding:6px 18px;border-radius:20px;font-weight:700;font-size:.83rem;margin-top:10px}
+
+/* COMBO HINT */
+.combo{background:linear-gradient(135deg,var(--douradoc),#FFF1CC);border:2px dashed var(--dourado);border-radius:16px;padding:28px;max-width:660px;margin:28px auto 0;text-align:center}
+.combo h3{color:var(--azul);font-size:1.15rem;font-weight:800;margin-bottom:10px;line-height:1.4}
+.combo p{font-size:.92rem;color:#666;line-height:1.6}
+.combo .frase{font-size:1rem;font-weight:700;color:var(--azul);margin-top:14px;font-style:italic;line-height:1.5}
+
+/* FAQ */
+.fql{max-width:720px;margin:0 auto}
+.fqi{border-bottom:1px solid #e0e0e0}
+.fqq{width:100%;background:none;border:none;padding:18px 38px 18px 0;font-size:1rem;font-weight:600;color:var(--azul);text-align:left;cursor:pointer;position:relative;font-family:inherit}
+.fqq::after{content:'+';position:absolute;right:0;font-size:1.4rem;font-weight:300;color:var(--oliva);transition:transform .3s}
+.fqi.active .fqq::after{content:'\2212'}
+.fqa{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.fqai{padding:0 0 18px;font-size:.9rem;color:#666;line-height:1.7}
+
+/* SOBRE */
+.sobre{max-width:780px;margin:0 auto;text-align:center}
+.sobre .av{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,var(--azulc),var(--azul));margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;color:var(--branco)}
+.sobre p{font-size:.93rem;color:#555;line-height:1.8;margin-bottom:10px}
+
+footer{background:var(--escuro);color:rgba(255,255,255,.5);padding:28px 5%;text-align:center;font-size:.78rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav{flex-wrap:wrap;gap:8px;justify-content:center}
+  .navc,.cd{display:none}
+  .hero{flex-direction:column;text-align:center;padding:36px 5%;min-height:auto}
+  .hero h1{font-size:1.65rem}
+  .hi{position:relative;width:100%;height:auto;margin-top:24px}
+  .hi .ph{width:200px;height:200px;font-size:3rem}
+  .trust{flex-wrap:wrap;max-width:100%}
+  .tb{min-width:45%}
+  .st{font-size:1.4rem}
+  .fg,.prom-grid,.dg,.bg2{grid-template-columns:1fr}
+  .story-inner .virada{padding:22px}
+  .pc{padding:22px}
+  .pg .val{font-size:2.2rem}
+  .gb{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="logo">BISCOITO CASEIRO<span>Receita de Ouro</span></div>
+  <div class="navc">Desconto Exclusivo</div>
+  <div class="navr">
+    <div class="cd">
+      <div class="u" id="h">02</div>
+      <div class="u" id="m">47</div>
+      <div class="u" id="s">33</div>
+    </div>
+    <a href="#comprar" class="bn">QUERO A RECEITA DO BISCOITO PERFEITO</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hc">
+    <div class="hero-tag">Chega de biscoito duro</div>
+    <h1>Seu biscoito caseiro <em>nunca mais vai ficar duro.</em></h1>
+    <p class="p1">A receita que acerta de primeira, mesmo que voce nunca tenha feito um antes.</p>
+    <p class="p2">Descubra o metodo exato (<strong>ingredientes, tempo e temperatura</strong>) que faz biscoito crocante por fora, macio por dentro — <strong>sem desperdicar nenhum ingrediente.</strong></p>
+    <a href="#comprar" class="cta">QUERO A RECEITA DO BISCOITO PERFEITO</a>
+
+    <div class="trust">
+      <div class="tb"><div class="ic">&#9989;</div><div class="lb">Compra<br>100% Segura</div></div>
+      <div class="tb"><div class="ic">&#128170;</div><div class="lb">Satisfacao<br>Garantida</div></div>
+      <div class="tb"><div class="ic">&#127942;</div><div class="lb">Garantia<br>7 dias</div></div>
+      <div class="tb"><div class="ic">&#9854;</div><div class="lb">Acesso<br>Imediato</div></div>
+    </div>
+
+    <div class="pt">
+      <div class="d">40%<small>OFF</small></div>
+      <div class="p">
+        <div class="o">DE R$ 67,00</div>
+        <div class="n"><small>R$</small> 39,90</div>
+      </div>
+    </div>
+  </div>
+  <div class="hi"><div class="ph">&#127850;</div></div>
+</section>
+
+<!-- ABERTURA EMOCIONAL — TOQUE NA DOR -->
+<div class="story">
+  <div class="story-inner">
+    <p class="lead">Voce segue a receita direitinho... mede os ingredientes, mistura tudo, coloca no forno com carinho.</p>
+    <p>E quando tira? <em class="pain">Duro feito pedra.</em></p>
+    <p>Ou entao: mole demais, sem gosto, sem forma. Voce olha pro resultado e pensa: <em class="pain">"sera que eu nao levo jeito pra isso?"</em></p>
+    <p>Enquanto isso, sua sogra faz biscoito sem nem medir os ingredientes. Sua amiga posta no Instagram e todo mundo elogia. E voce ali, <strong>jogando mais uma fornada fora.</strong></p>
+
+    <div class="virada">
+      <strong>O problema nunca foi voce.</strong><br><br>
+      O problema sao receitas da internet com medidas erradas, passos que faltam, e sem ninguem te explicar o PORQUE de cada ingrediente.<br><br>
+      Ninguem te disse que a manteiga tem que estar na temperatura certa. Que o tempo de descanso da massa e o segredo. Que a farinha errada muda tudo.<br><br>
+      Quando voce entende o "porque", <strong>o biscoito da certo TODA vez.</strong>
+    </div>
+
+    <div class="cc">
+      <a href="#comprar" class="cta">QUERO ACERTAR DE PRIMEIRA</a>
+    </div>
+  </div>
+</div>
+
+<!-- COM ESSA RECEITA VOCE VAI... (PROMESSA CONCRETA) -->
+<section class="sa">
+  <h2 class="st">Com essa receita, voce vai:</h2>
+  <div class="prom-grid">
+    <div class="prom-card">
+      <div class="em">&#127850;</div>
+      <h3>Biscoito perfeito na primeira tentativa</h3>
+      <p>Tirar do forno um biscoito dourado, crocante por fora e macio por dentro — sem tentativa e erro.</p>
+    </div>
+    <div class="prom-card">
+      <div class="em">&#128176;</div>
+      <h3>Parar de desperdicar ingredientes</h3>
+      <p>Chega de jogar massa fora. Cada fornada vai sair como planejado, economizando seu dinheiro.</p>
+    </div>
+    <div class="prom-card">
+      <div class="em">&#128525;</div>
+      <h3>Ouvir "Nossa, foi VOCE que fez?"</h3>
+      <p>E responder com orgulho que sim. Ser elogiada pela familia e pelas visitas nas suas receitas.</p>
+    </div>
+    <div class="prom-card">
+      <div class="em">&#9989;</div>
+      <h3>Receita que funciona SEMPRE</h3>
+      <p>Com ingredientes simples que voce ja tem em casa. Funciona com forno simples. Passo a passo com fotos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE ESTA DENTRO -->
+<section class="sl">
+  <h2 class="st">O que voce recebe no Receita de Ouro</h2>
+  <p class="ss">Mais que receitas: um metodo completo pra voce nunca mais errar na cozinha.</p>
+
+  <div class="fg">
+    <div class="fc">
+      <div class="fi">&#127850;</div>
+      <div>
+        <h3>+ de 80 receitas testadas</h3>
+        <p>Biscoito simples, de polvilho, amanteigado, de chocolate, de maizena, com farinha de trigo, fit e muito mais.</p>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fi">&#128248;</div>
+      <div>
+        <h3>Passo a passo com fotos</h3>
+        <p>Cada etapa fotografada pra voce saber exatamente como a massa tem que ficar. Sem adivinhacao.</p>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fi">&#10024;</div>
+      <div>
+        <h3>Metodo Receita de Ouro</h3>
+        <p>O PORQUE de cada ingrediente, tempo e temperatura. Quando voce entende o metodo, acerta qualquer receita.</p>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fi">&#128230;</div>
+      <div>
+        <h3>Como armazenar corretamente</h3>
+        <p>Seu biscoito caseiro crocante por semanas. Tecnicas de armazenamento e embalagem profissional.</p>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fi">&#127793;</div>
+      <div>
+        <h3>Opcoes sem gluten e sem lactose</h3>
+        <p>Polvilho doce, polvilho azedo, farinha de arroz — tudo sinalizado e explicado.</p>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fi">&#128176;</div>
+      <div>
+        <h3>Guia pra vender e lucrar</h3>
+        <p>Precificacao, embalagem e dicas pra transformar suas receitas em renda extra de verdade.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cc">
+    <a href="#comprar" class="cta">QUERO MEU LIVRO AGORA!</a>
+  </div>
+</section>
+
+<!-- METODO -->
+<section class="sd">
+  <h2 class="st">O segredo nao e a receita.<br>E entender o PORQUE.</h2>
+  <p class="ss">Qualquer um pode misturar ingredientes. A diferenca e saber por que a manteiga tem que estar fria, por que a massa descansa, por que o forno pre-aquece. Quando voce entende, acerta SEMPRE.</p>
+
+  <ul class="ml">
+    <li>Por que seu biscoito fica duro — e como resolver pra sempre</li>
+    <li>A temperatura exata da manteiga pra cada tipo de biscoito</li>
+    <li>Polvilho doce ou azedo? Farinha de trigo comum ou especial? As respostas definitivas</li>
+    <li>O tempo de descanso da massa que ninguem te conta</li>
+    <li>Como armazenar biscoito caseiro por semanas sem perder a crocancia</li>
+    <li>Modelagem profissional e embalagem pra quem quer vender</li>
+  </ul>
+  <div class="cc"><a href="#comprar" class="cta">QUERO ENTENDER O METODO</a></div>
+</section>
+
+<!-- VOCE SE IDENTIFICA? (DOR EMOCIONAL) -->
+<section class="dor-section" style="padding:70px 5%">
+  <h2 class="st">Isso parece familiar?</h2>
+  <p class="ss">Se voce se identificou com pelo menos uma dessas situacoes, esse livro foi feito pra voce.</p>
+
+  <ul class="dor-grid">
+    <li>Seu biscoito sempre fica <em>duro</em>, mole demais ou sem gosto</li>
+    <li>Voce pesquisa receita no Google, segue direitinho e <em>mesmo assim da errado</em></li>
+    <li>Ja jogou fornada fora e sentiu que <em>desperdicou ingredientes e dinheiro</em></li>
+    <li>Sua sogra/mae faz tudo sem medir e da certo — <em>e voce nao consegue</em></li>
+    <li>Tem <em>vergonha de servir</em> biscoito pra visitas porque nao confia no resultado</li>
+    <li>Ja pensou <em>"sera que eu nao levo jeito pra cozinha?"</em></li>
+    <li>Quer fazer lanche caseiro pro marido e filhos <em>sem gastar com industrializado</em></li>
+    <li>Sonha em vender por encomenda mas <em>nao confia nas suas receitas</em></li>
+  </ul>
+
+  <div style="max-width:700px;margin:0 auto;background:linear-gradient(135deg,var(--azul),var(--azul2));color:var(--branco);padding:28px;border-radius:14px;text-align:center;font-size:1.06rem;line-height:1.7">
+    <strong style="font-size:1.2rem">O problema nunca foi voce.</strong><br>
+    Foram receitas sem metodo. Hoje isso muda.
+  </div>
+
+  <div class="cc"><a href="#comprar" class="cta">QUERO MUDAR ISSO HOJE</a></div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="sl">
+  <h2 class="st">Quem ja testou, aprovou:</h2>
+  <div class="dg">
+    <div class="dc">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Meu biscoito SEMPRE ficava duro. Achei que o problema era meu forno. Fiz a primeira receita do livro e saiu PERFEITO. Meu marido nao acreditou que fui eu que fiz!"</p>
+      <span class="nm">— Juliana M., 26 anos</span>
+    </div>
+    <div class="dc">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Comecei vendendo biscoito de polvilho pro pessoal do trabalho. Em 3 semanas ja tinha encomenda fixa. Melhor investimento que fiz!"</p>
+      <span class="nm">— Carla S., 31 anos</span>
+    </div>
+    <div class="dc">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Minha sogra fazia biscoito perfeito e eu morria de vergonha dos meus. Agora ELA me pede a receita. Nao tem preco essa sensacao!"</p>
+      <span class="nm">— Amanda R., 28 anos</span>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="sa">
+  <h2 class="st">Bonus exclusivos que voce leva junto:</h2>
+
+  <div class="bg2">
+    <div class="bc">
+      <span class="bnn">Bonus 1</span>
+      <h3>Guia de Armazenamento</h3>
+      <p>Como armazenar cada tipo de biscoito pra manter crocancia e sabor por semanas.</p>
+    </div>
+    <div class="bc">
+      <span class="bnn">Bonus 2</span>
+      <h3>Planilha de Precificacao</h3>
+      <p>Calcule o custo exato e saiba quanto cobrar pra lucrar de verdade com encomendas.</p>
+    </div>
+    <div class="bc">
+      <span class="bnn">Bonus 3</span>
+      <h3>Guia de Embalagem pra Vender</h3>
+      <p>Embalagem profissional que valoriza seu biscoito e conquista clientes.</p>
+    </div>
+    <div class="bc">
+      <span class="bnn">Bonus 4</span>
+      <h3>Lista de Fornecedores</h3>
+      <p>Onde comprar farinha de trigo, polvilho e manteiga de qualidade gastando menos.</p>
+    </div>
+  </div>
+
+  <div class="cc"><a href="#comprar" class="cta">QUERO TUDO ISSO</a></div>
+  <p style="text-align:center;margin-top:14px;font-size:.83rem;color:#856404;font-weight:600">&#9888; Bonus por tempo limitado — podem sair do ar a qualquer momento.</p>
+</section>
+
+<!-- GARANTIA -->
+<section class="sl">
+  <div class="gb">
+    <div class="big">&#128737;</div>
+    <h2>RISCO ZERO</h2>
+    <div class="sg">7 DIAS DE GARANTIA TOTAL</div>
+    <p>Se voce nao tirar do forno um biscoito que te encha de orgulho, devolvemos <strong>100% do seu dinheiro</strong>. Sem perguntas. Sem burocracia.</p>
+    <p style="margin-top:12px;font-weight:600;color:var(--azul)">Ou voce ama, ou nao paga nada.</p>
+    <div class="cc"><a href="#comprar" class="cta">QUERO TESTAR SEM RISCO</a></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="ps" id="comprar">
+  <h2 class="st">Sua cozinha muda hoje.</h2>
+  <p class="ss">Tudo que voce precisa pra fazer biscoito caseiro perfeito — por menos que uma ida ao mercado.</p>
+
+  <div class="pc">
+    <div class="urg">&#9200; Oferta expira em breve</div>
+    <ul class="inc">
+      <li>+ de 80 receitas testadas (simples, polvilho, amanteigado, chocolate, fit...)</li>
+      <li>Metodo Receita de Ouro com o PORQUE de cada passo</li>
+      <li>Passo a passo com fotos em todas as receitas</li>
+      <li>Opcoes sem gluten e sem lactose sinalizadas</li>
+      <li>Guia de armazenamento + Guia de embalagem</li>
+      <li>Planilha de precificacao + Lista de fornecedores</li>
+      <li>Acesso imediato e vitalicio</li>
+    </ul>
+    <div class="pg">
+      <span class="de">R$ 67,00</span>
+      <span class="por">POR APENAS</span>
+      <span class="val"><small>R$</small> 39,90</span>
+    </div>
+    <a href="#" class="cta" style="display:block;text-align:center">QUERO A RECEITA DO BISCOITO PERFEITO</a>
+    <span class="db">40% DE DESCONTO — so hoje</span>
+
+    <div class="trust" style="max-width:100%;margin-top:22px">
+      <div class="tb"><div class="ic">&#9989;</div><div class="lb">Compra<br>100% Segura</div></div>
+      <div class="tb"><div class="ic">&#128170;</div><div class="lb">Satisfacao<br>Garantida</div></div>
+      <div class="tb"><div class="ic">&#127942;</div><div class="lb">Garantia<br>7 dias</div></div>
+      <div class="tb"><div class="ic">&#9854;</div><div class="lb">Acesso<br>Imediato</div></div>
+    </div>
+  </div>
+
+  <!-- COMBO / FUNIL HINT -->
+  <div class="combo">
+    <h3>Na hora do checkout, voce vai poder completar sua cozinha:</h3>
+    <p>Adicione o <strong>Livro de Pao de Queijo</strong> (o segredo do polvilho doce vs azedo) e o <strong>Livro de Bolo de Trigo</strong> (o bolo fofinho que nunca sola) com desconto exclusivo.</p>
+    <div class="frase">"O biscoito que crocante. O pao de queijo que cresce. O bolo que nunca sola. Sua cozinha nunca mais vai te frustrar."</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sl">
+  <h2 class="st">Duvidas Frequentes</h2>
+  <div class="fql">
+    <div class="fqi"><button class="fqq">Sou iniciante total. Vou conseguir?</button><div class="fqa"><div class="fqai">Sim! O livro foi feito pra quem nunca fez biscoito na vida. Cada receita tem passo a passo com fotos e explicacao do porque de cada etapa. Se voce sabe ligar o forno, voce consegue.</div></div></div>
+    <div class="fqi"><button class="fqq">Por que meu biscoito sempre fica duro?</button><div class="fqa"><div class="fqai">Essa e a dor #1 e o livro resolve isso logo no primeiro capitulo. Geralmente e a temperatura da manteiga, o tempo de forno ou a farinha errada. O metodo explica cada detalhe.</div></div></div>
+    <div class="fqi"><button class="fqq">Qual a diferenca entre polvilho doce e azedo?</button><div class="fqa"><div class="fqai">O livro explica em detalhe quando usar cada um. Em resumo: polvilho azedo da crocancia, doce da maciez. A combinacao certa e o segredo — e ta tudo no metodo.</div></div></div>
+    <div class="fqi"><button class="fqq">Como armazenar pra durar mais?</button><div class="fqa"><div class="fqai">O Bonus 1 (Guia de Armazenamento) ensina tecnicas pra cada tipo de biscoito. Alguns duram ate 30 dias mantendo crocancia e sabor.</div></div></div>
+    <div class="fqi"><button class="fqq">Posso vender os biscoitos?</button><div class="fqa"><div class="fqai">Sim! Muitas alunas ja vendem por encomenda. Voce recebe planilha de precificacao + guia de embalagem pra comecar seu negocio.</div></div></div>
+    <div class="fqi"><button class="fqq">Funciona no meu forno simples?</button><div class="fqa"><div class="fqai">Sim! Todas as receitas foram testadas em forno comum. O metodo ensina a adaptar tempo e temperatura pro seu forno especifico.</div></div></div>
+    <div class="fqi"><button class="fqq">E se eu nao gostar?</button><div class="fqa"><div class="fqai">Voce tem 7 dias de garantia incondicional. Se nao gostar, devolvemos 100% do valor. Sem perguntas.</div></div></div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sa">
+  <div class="sobre">
+    <div class="av">&#128105;&#8205;&#127859;</div>
+    <h2 class="st">Quem esta por tras do Receita de Ouro?</h2>
+    <p>Criado por quem ja errou muito na cozinha — e justamente por isso entende sua frustacao. Depois de anos testando, errando e aperfeicoando, reuniu tudo num metodo simples que funciona pra qualquer pessoa.</p>
+    <p>Ja ajudou milhares de mulheres a fazerem biscoitos perfeitos, ganharem elogios da familia e ate comecarem uma renda extra com encomendas.</p>
+    <p style="font-weight:600;color:var(--azul)">A missao? Que voce nunca mais olhe pra uma fornada e pense "nao levo jeito". Porque voce leva. So faltava o metodo certo.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="sd" style="padding:50px 5%;text-align:center">
+  <p style="font-size:1.4rem;font-weight:800;max-width:600px;margin:0 auto 20px;line-height:1.4">Seu proximo biscoito pode ser o melhor que voce ja fez.</p>
+  <a href="#comprar" class="cta">QUERO A RECEITA DO BISCOITO PERFEITO</a>
+  <p style="margin-top:14px;font-size:.85rem;opacity:.7">Acesso imediato. Passo a passo com fotos. Funciona com forno simples.</p>
+</section>
+
+<footer>
+  <p>&copy; 2026 — Todos os direitos reservados | Biscoito Caseiro — Receita de Ouro</p>
+  <p style="margin-top:5px">Este produto e digital. Resultados podem variar. Receitas para uso pessoal e/ou comercial.</p>
+</footer>
+
+<script>
+(function(){let t=2*3600+47*60+33;setInterval(()=>{if(t<=0)return;t--;document.getElementById('h').textContent=String(Math.floor(t/3600)).padStart(2,'0');document.getElementById('m').textContent=String(Math.floor((t%3600)/60)).padStart(2,'0');document.getElementById('s').textContent=String(t%60).padStart(2,'0')},1000)})();
+document.querySelectorAll('.fqq').forEach(b=>{b.addEventListener('click',()=>{const i=b.parentElement,a=i.querySelector('.fqa'),o=i.classList.contains('active');document.querySelectorAll('.fqi').forEach(x=>{x.classList.remove('active');x.querySelector('.fqa').style.maxHeight='0'});if(!o){i.classList.add('active');a.style.maxHeight=a.scrollHeight+'px'}})});
+</script>
+</body>
+</html>
